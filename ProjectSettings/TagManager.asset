@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3592343421
+    locked: 0
+  - name: Platform
+    uniqueID: 2603071183
+    locked: 0
+  - name: Character
+    uniqueID: 2635284351
     locked: 0
