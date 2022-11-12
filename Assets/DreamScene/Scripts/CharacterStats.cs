@@ -13,7 +13,8 @@ public class CharacterStats : MonoBehaviour
     public static float jumpSpeed = 5f;
     public static bool isDoubleJumpEnabled = true;
     public static bool isDoubleDashEnabled = false;
-    public static string weaponType = "melee"; //melee / ranged
+    public static string weaponType = "ranged"; //melee / ranged
+    public static float bulletSpeed = 7f;
 
     private Transform heartContainer;
     private void Start()

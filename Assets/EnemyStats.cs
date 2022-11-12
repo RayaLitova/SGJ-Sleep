@@ -6,7 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public float speed = 0.4f;
     public int damage = 1;
-    public float attackRange = 2f;
+    public float attackRange = 1f;
     public int maxHealth;
     public int health;
     private int lastHealth;
@@ -37,7 +37,9 @@ public class EnemyStats : MonoBehaviour
         if (lastHealth == health) return; // skip loop if not needed
         lastHealth = health;
         for (int i = 0; i < maxHealth; i++)
-            heartContainer.GetChild(i).gameObject.SetActive((i < health - 1 ? true : false));
+            heartContainer.GetChild(i).gameObject.SetActive((i < health ? true : false));
+        if (health == 0)
+            Destroy(gameObject);
     }
     
 }
