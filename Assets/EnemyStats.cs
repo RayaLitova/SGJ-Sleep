@@ -6,15 +6,17 @@ public class EnemyStats : MonoBehaviour
 {
     public float speed = 0.4f;
     public int damage = 1;
-    public float attackRange = 1f;
+    public float attackRange = 1.1f;
     public int maxHealth;
     public int health;
     private int lastHealth;
+    public string enemyType;
 
     [SerializeField] Transform heartContainer;
     [SerializeField] Transform heart;
     void Start()
     {
+        Debug.Log(heart.position);
         maxHealth = Mathf.RoundToInt(Random.Range(1.0f, 3.0f));
         health = maxHealth;
         lastHealth = maxHealth;

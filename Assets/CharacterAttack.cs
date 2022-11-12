@@ -37,16 +37,16 @@ public class CharacterAttack : MonoBehaviour
     private IEnumerator MeleeAttack() 
     {
         attack.gameObject.SetActive(true);
+        attack.GetComponent<SpriteRenderer>().sprite = null;
         if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
             attack.position = new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z);
         else
             attack.position = new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(attackLength);
         attack.gameObject.SetActive(false);
     }
     private IEnumerator RangedAttack()
     {
-        Debug.Log(GetComponent<BoxCollider2D>().offset.y);
         if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x)
             attack.position = new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z);
         else
@@ -61,7 +61,7 @@ public class CharacterAttack : MonoBehaviour
             Camera.main.ScreenToWorldPoint(Input.mousePosition).y > transform.position.y + 1f?
                                 CharacterStats.bulletSpeed : 0,
             0);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(attackLength);
         Destroy(bullet.gameObject);
     }
 

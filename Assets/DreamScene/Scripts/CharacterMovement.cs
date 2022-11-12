@@ -14,7 +14,7 @@ public class CharacterMovement : MonoBehaviour
     private int jumpCount = 0;
     private int dashCount = 0;
     private float dashTimer = 0f;
-    private bool isMoveNegative = false;
+    private bool isMoveNegative = true;
     private Rigidbody2D characterRb;
     private BoxCollider2D characterBoxCollider;
 
@@ -50,10 +50,14 @@ public class CharacterMovement : MonoBehaviour
     private void HorizontalMovement()
     {
         Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        if (moveDirection.x < 0) isMoveNegative = true;
+        if (moveDirection == Vector3.zero)
+            return;
+        bool lastMoveNegative = isMoveNegative;
+        if (moveDirection.x < 0.0f) isMoveNegative = true;
         else isMoveNegative = false;
-        if (moveDirection != Vector3.zero)
-            transform.position += (moveDirection * CharacterStats.runSpeed);
+        if(lastMoveNegative != isMoveNegative) 
+            FlipObject();
+        transform.position += (moveDirection * CharacterStats.runSpeed);
     }
 
     private void Dash()
@@ -62,11 +66,22 @@ public class CharacterMovement : MonoBehaviour
             return;
         if (dashTimer < Time.fixedTime)
             dashCount = 0;
-        if (dashCount >= (CharacterStats.isDoubleDashEnabled ? 2 : 1))
+        if (dashCount >= 1)
             return;
+        FlipObject();
         characterRb.velocity = new Vector2(CharacterStats.dashSpeed * (isMoveNegative ? -1 : 1), characterRb.velocity.y);
         dashCount++;
         dashTimer = Time.fixedTime + dashLength;
+    }
+
+    private void FlipObject()
+    {
+        Vector3 newScale = transform.localScale;
+        if (isMoveNegative)
+            newScale.x = Mathf.Abs(newScale.x);
+        else
+            newScale.x *= Mathf.Abs(newScale.x) * - 1;
+        transform.localScale = newScale;
     }
 
     private bool isGrounded()
