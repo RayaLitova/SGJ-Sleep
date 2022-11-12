@@ -8,13 +8,8 @@ using UnityEngine.UIElements;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
-    [SerializeField] float dashSpeed;
-    [SerializeField] bool isDoubleJumpEnabled = false;
-    [SerializeField] float jumpSpeed;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float dashLength = 0f;
-
 
     private int jumpCount = 0;
     private int dashCount = 0;
@@ -46,10 +41,10 @@ public class CharacterMovement : MonoBehaviour
             return;
         if (isGrounded())
             jumpCount = 0;
-        if (jumpCount >= (isDoubleJumpEnabled ? 2 : 1))
+        if (jumpCount >= (CharacterStats.isDoubleJumpEnabled ? 2 : 1))
             return;
 
-        characterRb.velocity = new Vector2(characterRb.velocity.x, jumpSpeed);
+        characterRb.velocity = new Vector2(characterRb.velocity.x, CharacterStats.jumpSpeed);
         jumpCount++;
     }
     private void HorizontalMovement()
@@ -58,7 +53,7 @@ public class CharacterMovement : MonoBehaviour
         if (moveDirection.x < 0) isMoveNegative = true;
         else isMoveNegative = false;
         if (moveDirection != Vector3.zero)
-            transform.position += (moveDirection * moveSpeed);
+            transform.position += (moveDirection * CharacterStats.runSpeed);
     }
 
     private void Dash()
@@ -67,9 +62,9 @@ public class CharacterMovement : MonoBehaviour
             return;
         if (dashTimer < Time.fixedTime)
             dashCount = 0;
-        if (dashCount >= 1)
+        if (dashCount >= (CharacterStats.isDoubleDashEnabled ? 2 : 1))
             return;
-        characterRb.velocity = new Vector2(dashSpeed * (isMoveNegative ? -1 : 1), characterRb.velocity.y);
+        characterRb.velocity = new Vector2(CharacterStats.dashSpeed * (isMoveNegative ? -1 : 1), characterRb.velocity.y);
         dashCount++;
         dashTimer = Time.fixedTime + dashLength;
     }

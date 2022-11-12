@@ -6,7 +6,7 @@ public static class Strings
 {
     public static string Get(string key) { return values[key]; }
 
-    public static readonly string[] weaponNames = {"fireball", "sword", "lightning"};
+    public static readonly string[] weaponNames = {"fireball", "sword"};
     public static readonly string[] levelNames = {"test1", "test2", "test3"};
     public static readonly string[] bossNames = {"boss1", "boss2", "boss3"};
 
