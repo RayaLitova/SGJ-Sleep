@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class MapController : DayScreenController
     [SerializeField] public readonly List<MapButton> activePoints = new List<MapButton>();
     [SerializeField] private Color activePointColor;
     [SerializeField] private Color inactivePointColor;
+    [SerializeField] private TextMeshProUGUI mapTitle;
 
     void Start()
     {
@@ -16,6 +18,7 @@ public class MapController : DayScreenController
         foreach(MapButton point in mapPoints) {
             point.GetComponent<Image>().color = inactivePointColor;
         }
+        mapTitle.SetText(Strings.Get("map_screen_prompt"));
     }
 
     public void OnButtonClick(MapButton button) {

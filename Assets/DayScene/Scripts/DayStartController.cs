@@ -7,9 +7,18 @@ public class DayStartController : DayScreenController
 {
     [SerializeField] private DayTransitionData dtd;
     [SerializeField] private TextMeshProUGUI daySummaryText;
+    private int summaryIndex = 0;
 
     void Start()
     {
-        daySummaryText.SetText(dtd.nextSummaryText);
+        daySummaryText.SetText(dtd.nextSummaryTexts[summaryIndex]);
+    }
+
+    override public void ProgressScreens() {
+        if(summaryIndex >= dtd.nextSummaryTexts.Length - 1) {
+            base.ProgressScreens();
+        } else {
+            daySummaryText.SetText(dtd.nextSummaryTexts[++summaryIndex]);
+        }
     }
 }
