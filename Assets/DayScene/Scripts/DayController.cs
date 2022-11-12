@@ -48,7 +48,7 @@ public class DayController : MonoBehaviour
             Strings.Get("demo_headline_6")
         };
 
-        SceneManager.LoadScene("Day");
+        SceneManager.LoadScene("DreamScene");
     }
 
     public void ProgressScreens() {

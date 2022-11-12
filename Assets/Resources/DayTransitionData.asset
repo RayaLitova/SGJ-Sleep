@@ -18,10 +18,7 @@ MonoBehaviour:
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
     consequat...
-  nextNewsTitles:
-  - Sed ut perspiciatis unde omnis iste
-  - Nemo enim ipsam voluptatem quia voluptas
-  - Neque porro quisquam est
+  nextNewsTitles: []
   nextLevel: 
   nextWeapon: 
   nextBoss: 
