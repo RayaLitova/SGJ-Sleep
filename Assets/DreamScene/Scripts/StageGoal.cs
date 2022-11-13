@@ -10,7 +10,7 @@ public class StageGoal : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player") return;
 
-        if(dtd.newKillsCount > 0)
+        if(dtd.dayNumber <= 1  || dtd.newKillsCount > 0)
             StageController.OnStageComplete();
         else
             StageController.OnPlayerEscape();
