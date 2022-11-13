@@ -12,24 +12,24 @@ public class BossController : MonoBehaviour
         player = GameObject.Find("Player").transform;
         animator = GetComponent<Animator>();
         StartCoroutine("Attack");
-        animator.SetBool("SeesPlayer", true);
     }
     private IEnumerator Attack()
     {
         while (true)
         {
+            
             animator.SetBool("Attack", true);
-            if (Vector2.Distance(player.position, transform.position) > 5.0f)
+            if (Vector2.Distance(player.position, transform.position) > 3.0f && Vector2.Distance(player.position, transform.position) < 6.0f)
             {
-                animator.SetFloat("AttackRange", 1.0f);
                 StartCoroutine("RangedAttack");
+                animator.SetFloat("AttackRange", 1);
             }
             else
             {
-                animator.SetFloat("AttackRange", 0.0f);
                 StartCoroutine("MeleeAttack");
+                animator.SetFloat("AttackRange", 0);
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(.5f);
             animator.SetBool("Attack", false);
             yield return new WaitForSeconds(3f);
         }
@@ -37,6 +37,7 @@ public class BossController : MonoBehaviour
 
     private IEnumerator RangedAttack()
     {
+        Debug.Log("ranged");
         for (int i = 0; i < 2; i++)
         {
             GameObject ball = transform.Find("Balls").GetChild(i).gameObject;
@@ -55,9 +56,9 @@ public class BossController : MonoBehaviour
     }
     private IEnumerator MeleeAttack()
     {
-        yield return new WaitForSeconds(1.5f);
-        meleeAttack.SetActive(true);
         yield return new WaitForSeconds(0.5f);
+        meleeAttack.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         meleeAttack.SetActive(false);
     }
 }

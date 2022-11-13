@@ -13,7 +13,7 @@ public static class Strings
     }
 
     public static readonly string[] weaponNames = { "fireball", "sword" };
-    public static readonly string[] levelNames = { "Stage1", "Stage 2" };
+    public static readonly string[] levelNames = { "Stage 2" };
     public static readonly string[] bossNames = { "boss1", "boss2", "boss3" };
 
     private static readonly Dictionary<string, string> values = new Dictionary<string, string>() {
@@ -61,7 +61,7 @@ public static class Strings
         {"day_end_summary_3", "I would appreciate some alone time after a hard day like ."},
         {"day_end_summary_playerStrength", "Heavy Weight.Big Muscle."},
         {"day_end_summary_enemyCount", "May God protect you from all sins."},
-        {"day_end_summary_playerSpeed", "If you don't come fast enough you will wait a few eternities."},
+        {"day_end_summary_playerSpeed", "If you don’t come fast enough you will wait a few eternities."},
         {"day_end_summary_showHiddenPlatforms", "Modern art is very abstract ,but it might boost your imagination."},
 
         // Displayed in the tutorial level

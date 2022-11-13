@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -20,18 +19,9 @@ public class DayController : MonoBehaviour
     }
 
     public void SwitchToNight() {
-        dtd.nextWeapon = Strings.weaponNames[UnityEngine.Random.Range(0, Strings.weaponNames.Length)];
-        if(dtd.nextLevel != null) {
-            int index = Array.IndexOf(Strings.levelNames, dtd.nextLevel);
-            if(index >= 0 && index < Strings.levelNames.Length -1) {
-                dtd.nextLevel = Strings.levelNames[index + 1];
-            } else {
-                dtd.nextLevel = Strings.levelNames[UnityEngine.Random.Range(0, Strings.levelNames.Length)];
-            }
-        } else {
-            dtd.nextLevel = Strings.levelNames[0];
-        }
-        dtd.nextBoss = Strings.bossNames[UnityEngine.Random.Range(0, Strings.bossNames.Length)];
+        dtd.nextWeapon = Strings.weaponNames[Random.Range(0, Strings.weaponNames.Length)];
+        dtd.nextLevel = Strings.levelNames[Random.Range(0, Strings.levelNames.Length)];
+        dtd.nextBoss = Strings.bossNames[Random.Range(0, Strings.bossNames.Length)];
 
         dtd.dayNumber++;
 

@@ -1391,6 +1391,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3264694407633650885, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
+      propertyPath: meleeAttack
+      value: 
+      objectReference: {fileID: 783317703}
     - target: {fileID: 6217702645743410623, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
       propertyPath: m_Name
       value: BossWerewolf
@@ -1401,6 +1405,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
+--- !u!1 &783317703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1233652800590001499, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
+  m_PrefabInstance: {fileID: 783317702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &825690039 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 444376532584426537, guid: 631041da93552f04a8bae8111be5faa0, type: 3}
@@ -1497,6 +1506,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1135654829567276818, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135654829567276818, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
+      propertyPath: m_Offset.x
+      value: -6.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135654829567276819, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135654829567276819, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
+      propertyPath: m_Offset.x
+      value: 6.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4723755272428292640, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
       propertyPath: m_Name
       value: PlayerCamera

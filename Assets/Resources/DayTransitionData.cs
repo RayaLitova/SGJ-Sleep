@@ -32,10 +32,10 @@ public class DayTransitionData : ScriptableObject
         nextNewsTitles = new string[] {};
         nextNewsBodies = new string[] {};
         newKillsCount = 0;
-        nextLevel = null;
     }
 
     public void ResetNight() {
+        nextLevel = null;
         nextWeapon = null;
         nextBoss = null;
         activeModifiers = new string[] {};
