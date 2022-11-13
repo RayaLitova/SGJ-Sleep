@@ -49,5 +49,6 @@ public class DayTransitionData : ScriptableObject
         killCount = 0;
         successCount = 0;
         failureCount = 0;
+        gameOver = false;
     }
 }

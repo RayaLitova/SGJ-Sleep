@@ -12,6 +12,8 @@ public class GhostAttackHit : MonoBehaviour
     private IEnumerator DestroyTimer()
     {
         yield return new WaitForSeconds(1f);
+        GetComponentInParent<Animator>().SetBool("Die", true);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject.transform.parent.gameObject);
     }
 
@@ -20,6 +22,6 @@ public class GhostAttackHit : MonoBehaviour
         if(LayerMask.LayerToName(collision.gameObject.layer) != "Character")
             return;
         CharacterStats.health -= transform.parent.GetComponent<EnemyStats>().damage;
-        Destroy(gameObject.transform.parent.gameObject);
+        StartCoroutine("DestroyTimer");
     }
 }
