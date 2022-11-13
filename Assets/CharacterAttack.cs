@@ -89,6 +89,8 @@ public class CharacterAttack : MonoBehaviour
             Camera.main.ScreenToWorldPoint(Input.mousePosition).y > transform.position.y + 1f?
                                 CharacterStats.bulletSpeed : 0,
             0);
+        if (bullet.GetComponent<Rigidbody2D>().velocity.y != 0.0f)
+            bullet.GetComponent<Rigidbody2D>().velocity /= 2;
         transform.localScale = originalScaling;
         animator.SetBool("attack", false);
         yield return new WaitForSeconds(attackLength);
