@@ -1506,22 +1506,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1135654829567276818, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135654829567276818, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
-      propertyPath: m_Offset.x
-      value: -6.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135654829567276819, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135654829567276819, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
-      propertyPath: m_Offset.x
-      value: 6.15
-      objectReference: {fileID: 0}
     - target: {fileID: 4723755272428292640, guid: 3630a849eda42c649a3e5b217bddf7e2, type: 3}
       propertyPath: m_Name
       value: PlayerCamera
