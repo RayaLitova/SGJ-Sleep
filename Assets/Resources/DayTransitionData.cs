@@ -14,8 +14,7 @@ public class DayTransitionData : ScriptableObject
 
     // Day
     public string[] nextSummaryTexts = {
-        Strings.Get("day_start_summary_intro"),
-        Strings.Get("day_start_summary_tutorial")
+        Strings.Get("day_start_summary_intro")
     };
     public string[] nextNewsTitles = {};
     public string[] nextNewsBodies = {};
@@ -28,8 +27,7 @@ public class DayTransitionData : ScriptableObject
 
     public void ResetDay() {
         nextSummaryTexts = new string[] {
-            Strings.Get("day_start_summary_intro"),
-            Strings.Get("day_start_summary_tutorial")
+            Strings.Get("day_start_summary_intro")
         };
         nextNewsTitles = new string[] {};
         nextNewsBodies = new string[] {};
