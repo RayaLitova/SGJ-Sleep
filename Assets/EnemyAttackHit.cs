@@ -8,7 +8,6 @@ public class EnemyAttackHit : MonoBehaviour
     {
         if (LayerMask.LayerToName(collision.collider.gameObject.layer) != "Character")
             return;
-
         if (GetComponent<EnemyStats>() == null)
         {
             CharacterStats.health -= transform.GetComponentInParent<EnemyStats>().damage;

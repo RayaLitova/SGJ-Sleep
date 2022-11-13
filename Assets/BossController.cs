@@ -37,6 +37,7 @@ public class BossController : MonoBehaviour
 
     private IEnumerator RangedAttack()
     {
+        Debug.Log("ranged");
         for (int i = 0; i < 2; i++)
         {
             GameObject ball = transform.Find("Balls").GetChild(i).gameObject;

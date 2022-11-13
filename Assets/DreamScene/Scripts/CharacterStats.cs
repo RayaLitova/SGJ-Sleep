@@ -18,8 +18,7 @@ public class CharacterStats : MonoBehaviour
     public static string weaponType;  //melee / ranged
     public static float bulletSpeed = 7f;
     [SerializeField] private DayTransitionData dtd;
-
-    private Transform heartContainer;
+    [SerializeField] private Transform heartContainer;
     private void Start()
     {
         StageController.dtd = dtd;
@@ -31,8 +30,6 @@ public class CharacterStats : MonoBehaviour
             bulletSpeed *= 1.5f;
         if(Array.IndexOf(dtd.activeModifiers, "showHiddenPlatforms") >= 0)
             isDoubleJumpEnabled = true;
-
-        heartContainer = transform.Find("HeartContainer");
     }
     private void FixedUpdate()
     {
