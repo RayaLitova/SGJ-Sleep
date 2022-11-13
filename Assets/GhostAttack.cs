@@ -7,8 +7,6 @@ public class GhostAttack : MonoBehaviour
 {
     Transform target;
     EnemyStats stats;
-    private bool isInverted = false;
-    private float targetY;
     [SerializeField] private GameObject attack;
     private Animator animator;
     private bool immobilized = false;
@@ -16,7 +14,6 @@ public class GhostAttack : MonoBehaviour
     private void Start()
     {
         target = GameObject.Find("Player").transform;
-        targetY = transform.position.y;
         stats = GetComponent<EnemyStats>();
         animator = GetComponent<Animator>();
     }
