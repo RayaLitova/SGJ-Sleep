@@ -8,6 +8,9 @@ public class DayTransitionData : ScriptableObject
     public int killCount = 0;
     public int successCount = 0;
     public int failureCount = 0;
+    public int newKillsCount = 0;
+
+    public bool gameOver = false;
 
     // Day
     public string[] nextSummaryTexts = {
@@ -30,6 +33,7 @@ public class DayTransitionData : ScriptableObject
         };
         nextNewsTitles = new string[] {};
         nextNewsBodies = new string[] {};
+        newKillsCount = 0;
     }
 
     public void ResetNight() {

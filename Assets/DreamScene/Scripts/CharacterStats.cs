@@ -22,6 +22,8 @@ public class CharacterStats : MonoBehaviour
     private Transform heartContainer;
     private void Start()
     {
+        StageController.dtd = dtd;
+
         weaponType = dtd.nextWeapon ?? "sword";
         if(Array.IndexOf(dtd.activeModifiers, "playerSpeed") >= 0)
             runSpeed *= 1.5f;
@@ -43,23 +45,7 @@ public class CharacterStats : MonoBehaviour
         for (int i = 0; i < maxHealth; i++)
             heartContainer.GetChild(i).gameObject.SetActive((i < health ? true : false));
         if (health <= 0) {
-            dtd.ResetNight();
-            dtd.ResetDay();
-            dtd.nextSummaryTexts = new string[] {
-                Strings.Get("day_start_summary_failed_" + UnityEngine.Random.Range(1, 3))
-            };
-            IEnumerable<int> headlineNumbers = Enumerable.Range(1, 6)
-                .OrderBy(g => UnityEngine.Random.Range(0, 10))
-                .Take(3);
-
-            dtd.nextNewsTitles = headlineNumbers
-                .Select(i => Strings.Get("news_headline_generic_" + i))
-                .ToArray();
-            dtd.nextNewsBodies = headlineNumbers
-                .Select(i => Strings.Get("news_body_generic_" + i))
-                .ToArray();
-
-            SceneManager.LoadScene("Day");
+            StageController.OnPlayerDie();
         }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DayScreenController : MonoBehaviour
 {
     [SerializeField] private GameObject nextButton;
+    [SerializeField] private DayTransitionData dtd;
 
     public void OnAnimationEnd()
     {
@@ -14,6 +15,8 @@ public class DayScreenController : MonoBehaviour
     }
 
     public virtual void ProgressScreens() {
+        if(dtd.gameOver) Application.Quit();
+
         nextButton.GetComponent<Button>().onClick.RemoveListener(ProgressScreens);
         GetComponentInParent<DayController>().ProgressScreens();
         nextButton.SetActive(false);

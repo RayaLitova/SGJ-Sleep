@@ -25,7 +25,7 @@ public class DayController : MonoBehaviour
 
         dtd.dayNumber++;
 
-        SceneManager.LoadScene("DreamScene");
+        SceneManager.LoadScene(dtd.nextLevel);
     }
 
     public void ProgressScreens() {

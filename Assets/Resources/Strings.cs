@@ -13,7 +13,7 @@ public static class Strings
     }
 
     public static readonly string[] weaponNames = { "fireball", "sword" };
-    public static readonly string[] levelNames = { "test1", "test2", "test3" };
+    public static readonly string[] levelNames = { "Stage 2" };
     public static readonly string[] bossNames = { "boss1", "boss2", "boss3" };
 
     private static readonly Dictionary<string, string> values = new Dictionary<string, string>() {
