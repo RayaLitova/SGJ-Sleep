@@ -226,10 +226,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 1233652800590001499, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1517792972856288679, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -294,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3264694407633650885, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
+      propertyPath: meleeAttack
+      value: 
+      objectReference: {fileID: 795086949}
     - target: {fileID: 4389683975095948321, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -348,6 +348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
+--- !u!1 &795086949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1233652800590001499, guid: 7c90002685e1e8945a3086d6bfae0f7e, type: 3}
+  m_PrefabInstance: {fileID: 274325590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &994340503
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +479,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3751719067207494850, guid: 0f1acf5fbc1de854188b7916374a2e43, type: 3}
+      propertyPath: heartContainer
+      value: 
+      objectReference: {fileID: 1811127387}
     - target: {fileID: 3751719067207494876, guid: 0f1acf5fbc1de854188b7916374a2e43, type: 3}
       propertyPath: m_Name
       value: Player
@@ -721,6 +730,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 444376532584426537, guid: 631041da93552f04a8bae8111be5faa0, type: 3}
   m_PrefabInstance: {fileID: 1767139016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1811127387 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3751719067125289521, guid: 0f1acf5fbc1de854188b7916374a2e43, type: 3}
+  m_PrefabInstance: {fileID: 1464192689}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2016700905
 PrefabInstance:

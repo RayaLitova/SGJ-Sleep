@@ -10,7 +10,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{E7BFB98C-2315-44AD-ACCB-7F1BE2326CB4}
+AppId={{87212DE2-B90B-4DA6-A9C3-AE3E19780CA7}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -20,8 +20,8 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-; Remove the following line to run in administrative install mode (install for all users.)
-PrivilegesRequired=lowest
+; Uncomment the following line to run in non administrative install mode (install for current user only.)
+;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=K:\Unity\SGJ-Sleep\Installer
 OutputBaseFilename=IHadABadDreamSetup
@@ -39,8 +39,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "K:\Unity\SGJ-Sleep\Build\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "K:\Unity\SGJ-Sleep\Build\UnityPlayer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "K:\Unity\SGJ-Sleep\Build\Sleep_Data\*"; DestDir: "{app}\Sleep_Data"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "K:\Unity\SGJ-Sleep\Build\MonoBleedingEdge\*"; DestDir: "{app}\MonoBleedingEdge"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "K:\Unity\SGJ-Sleep\Build\Sleep_Data\*"; DestDir: "{app}\Sleep_Data"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

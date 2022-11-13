@@ -15,6 +15,10 @@ public class StageController : MonoBehaviour
         IEnumerable<int> headlineNumbers = Enumerable.Range(1, 6)
             .OrderBy(g => UnityEngine.Random.Range(0, 10))
             .Take(3);
+        foreach (var a in headlineNumbers)
+        {
+            Debug.Log(a);
+        }
 
         dtd.nextNewsTitles = headlineNumbers
             .Select(i => Strings.Get("news_headline_generic_" + i))
@@ -54,11 +58,12 @@ public class StageController : MonoBehaviour
                 Strings.Get("day_start_summary_game_lost_2")
             };
             dtd.gameOver = true;
-        }
-        else {
+        } else {
             dtd.nextSummaryTexts[0] = Strings.Get("day_start_summary_success_" + UnityEngine.Random.Range(1, 3));
-            dtd.nextNewsTitles[0] = Strings.Get("news_headline_" + dtd.nextBoss);
-            dtd.nextNewsTitles[0] = Strings.Get("news_body_" + dtd.nextBoss);
+            if(dtd.nextBoss != null) {
+                dtd.nextNewsTitles[0] = Strings.Get("news_headline_" + dtd.nextBoss);
+                dtd.nextNewsBodies[0] = Strings.Get("news_body_" + dtd.nextBoss);
+            }
         }
 
         SceneManager.LoadScene("Day");
