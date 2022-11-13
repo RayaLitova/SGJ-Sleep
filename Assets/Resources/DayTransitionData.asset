@@ -16,8 +16,10 @@ MonoBehaviour:
   killCount: 0
   successCount: 0
   failureCount: 0
+  newKillsCount: 0
+  gameOver: 0
   nextSummaryTexts:
-  - day_start_summary_intro
+  - This nightmare was exhausting,it feels like I have walked all night
   - day_start_summary_tutorial
   nextNewsTitles: []
   nextNewsBodies: []

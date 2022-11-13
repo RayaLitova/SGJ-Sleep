@@ -7,7 +7,6 @@ public class NewspaperController : DayScreenController
 {
     [SerializeField] private GameObject titlesRoot;
     [SerializeField] private GameObject bodiesRoot;
-    [SerializeField] private DayTransitionData dtd;
 
     void Start()
     {

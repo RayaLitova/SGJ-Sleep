@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DayStartController : DayScreenController
 {
-    [SerializeField] private DayTransitionData dtd;
     [SerializeField] private TextMeshProUGUI daySummaryText;
     private int summaryIndex = 0;
 
