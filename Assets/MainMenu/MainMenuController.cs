@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField] private DayTransitionData dtd;
+    [SerializeField] private Animator[] anim;
 
     public void StartGame() {
         dtd.Reset();
@@ -27,5 +28,11 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitGame() {
         Application.Quit();
+    }
+
+    void Start() {
+        foreach(Animator a in anim) {
+            a.SetBool("SeesPlayer", true);
+        }
     }
 }

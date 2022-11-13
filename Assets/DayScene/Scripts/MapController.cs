@@ -9,7 +9,6 @@ public class MapController : DayScreenController
     [SerializeField] private MapButton[] mapPoints;
     [SerializeField] public readonly List<MapButton> activePoints = new List<MapButton>();
     [SerializeField] private TextMeshProUGUI mapTitle;
-    [SerializeField] private DayTransitionData dtd;
 
     void Start()
     {
