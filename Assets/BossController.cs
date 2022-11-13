@@ -19,7 +19,7 @@ public class BossController : MonoBehaviour
         {
             
             animator.SetBool("Attack", true);
-            if (Vector2.Distance(player.position, transform.position) > 3.0f)
+            if (Vector2.Distance(player.position, transform.position) > 3.0f && Vector2.Distance(player.position, transform.position) < 6.0f)
             {
                 StartCoroutine("RangedAttack");
                 animator.SetFloat("AttackRange", 1);
