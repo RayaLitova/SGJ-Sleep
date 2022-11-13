@@ -12,17 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ecaa057eb3242459e71545353329db, type: 3}
   m_Name: DayTransitionData
   m_EditorClassIdentifier: 
-  dayNumber: 0
+  dayNumber: 3
   killCount: 0
   successCount: 0
-  failureCount: 0
+  failureCount: 3
   newKillsCount: 0
-  gameOver: 0
+  gameOver: 1
   nextSummaryTexts:
-  - This nightmare was exhausting,it feels like I have walked all night
-  - day_start_summary_tutorial
-  nextNewsTitles: []
-  nextNewsBodies: []
+  - The police found out about your mischievous nights out.How do you think prison
+    is going to treat you.
+  nextNewsTitles:
+  - At vero eos et accusamus et iusto
+  - A man walking his dog gets hit by a brick dropped by an attack eagle.
+  - Last night a man has been attacked by a zombie and found dead in a small alley
+  nextNewsBodies:
+  - 'Miss Ivanovich had been woken up by a horrible scream when she looked out the
+    window and saw a zombie attacking a man, in a small alley, with a knife. Is the
+    apocalypse coming? And why did the zombie just kill and not infect or eat the
+    victim''s brain? '
+  - This is a crazy/insane story that Bob the neighborhood's homeless protector reported
+    to  the police. Everyone believes Bob. After all he is known for his good deeds.
+    However, has Bob gone crazy? Medical expertise show a heavy head injury, seen
+    by a giant hole, in the upper part of the skull.
+  - news_body_generic_5
   nextLevel: 
   nextWeapon: 
   nextBoss: 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DayScreenController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class DayScreenController : MonoBehaviour
 
     public virtual void ProgressScreens() {
         if(dtd.gameOver) {
-            Application.Quit();
+            SceneManager.LoadScene("MainMenu");
             return;
         }
 
