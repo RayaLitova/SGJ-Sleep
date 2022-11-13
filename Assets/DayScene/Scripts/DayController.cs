@@ -23,11 +23,6 @@ public class DayController : MonoBehaviour
         dtd.nextLevel = Strings.levelNames[Random.Range(0, Strings.levelNames.Length)];
         dtd.nextBoss = Strings.bossNames[Random.Range(0, Strings.bossNames.Length)];
 
-        MapController mapCtrl = GetComponentInChildren<MapController>(true);
-        dtd.activeModifiers = new string[mapCtrl.activePoints.Count];
-        for(int i = 0; i < mapCtrl.activePoints.Count; i++) {
-            dtd.activeModifiers[i] = mapCtrl.activePoints[i].modifierName;
-        }
         dtd.dayNumber++;
 
         SceneManager.LoadScene("DreamScene");

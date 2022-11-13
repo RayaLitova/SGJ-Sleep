@@ -59,10 +59,10 @@ public static class Strings
         {"day_end_summary_1", "day_end_summary_1"},
         {"day_end_summary_2", "day_end_summary_2"},
         {"day_end_summary_3", "day_end_summary_3"},
-        {"day_end_summary_gym", "day_end_summary_gym"},
-        {"day_end_summary_church", "day_end_summary_church"},
-        {"day_end_summary_arts", "day_end_summary_arts"},
-        {"day_end_summary_bank", "day_end_summary_bank"},
+        {"day_end_summary_playerStrength", "day_end_summary_playerStrength"},
+        {"day_end_summary_enemyCount", "day_end_summary_enemyCount"},
+        {"day_end_summary_playerSpeed", "day_end_summary_playerSpeed"},
+        {"day_end_summary_showHiddenPlatforms", "day_end_summary_showHiddenPlatforms"},
 
         // Displayed in the tutorial level
         {"tutorial_level_prompt_1", "tutorial_level_prompt_1"},
