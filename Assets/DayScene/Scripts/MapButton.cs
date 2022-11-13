@@ -10,6 +10,7 @@ public class MapButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI labelText;
     [SerializeField] public string modifierName;
     [SerializeField] public string locationName;
+    [SerializeField] private GameObject activeMarker;
 
     void Start()
     {
@@ -23,5 +24,13 @@ public class MapButton : MonoBehaviour
     void OnClick()
     {
         mapCtrl.OnButtonClick(this);
+    }
+
+    public void Deactivate() {
+        activeMarker.SetActive(false);
+    }
+
+    public void Activate() {
+        activeMarker.SetActive(true);
     }
 }
