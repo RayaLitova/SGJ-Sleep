@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class PlayerFollow : MonoBehaviour
 {
-    private Vector2 followDirection = Vector2.zero;
+    private Transform followDirection = null;
 
     void FixedUpdate() {
-        if(followDirection == Vector2.zero) return;
+        if(!followDirection) return;
 
-        transform.position += (Vector3)followDirection * CharacterStats.runSpeed;
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag != "Player") return;
-
-        Debug.Log(collision.transform.position.x - transform.position.x);
-        followDirection = collision.transform.position.x - transform.position.x > 0 ? Vector2.right: Vector2.left;
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(followDirection.position.x, followDirection.position.y, transform.position.z), CharacterStats.runSpeed * 1.2f);
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag != "Player") return;
 
-        followDirection = Vector2.zero;
+        followDirection = collision.transform;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag != "Player") return;
+
+        followDirection = null;
     }
 }
