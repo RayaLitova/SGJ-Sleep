@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
 using Unity.Burst.CompilerServices;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -87,7 +88,13 @@ public class CharacterMovement : MonoBehaviour
     private bool isGrounded()
     {
         float extraHeight = .02f;
-        RaycastHit2D r = Physics2D.Raycast(characterBoxCollider.bounds.center, Vector2.down, characterBoxCollider.bounds.extents.y + extraHeight, groundLayer);
+        RaycastHit2D r = Physics2D.Raycast(characterBoxCollider.bounds.center, Vector2.down, characterBoxCollider.bounds.extents.y + extraHeight, 1 << LayerMask.NameToLayer("Ground") | 1 << LayerMask.NameToLayer("Enemy"));
         return r.collider != null;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Enemy")
+            CharacterStats.health--;
     }
 }
