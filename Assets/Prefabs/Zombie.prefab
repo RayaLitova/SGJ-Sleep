@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 4321477667961474530}
   - component: {fileID: 2986601367273008333}
   - component: {fileID: 5476380985005444281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ Transform:
   m_GameObject: {fileID: 8764847938654180008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.382, y: -0.016, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalScale: {x: 1.5910991, y: 1.5910991, z: 1.5910991}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7945231361257117958}
@@ -518,8 +518,8 @@ MonoBehaviour:
   - {fileID: 3164040077850426007}
   - {fileID: 7715517777628004989}
   m_Bounds:
-    m_Center: {x: 0.028469026, y: -0.50840664, z: 0}
-    m_Extent: {x: 0.8398372, y: 0.49159336, z: 0}
+    m_Center: {x: 0.028469086, y: -0.5084066, z: 0}
+    m_Extent: {x: 0.8398372, y: 0.49159342, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.4
   damage: 1
-  attackRange: 0.5
+  attackRange: 1.5
   maxHealth: 0
   health: 0
   enemyType: zombie
