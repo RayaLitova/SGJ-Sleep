@@ -16,7 +16,6 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] Transform heart;
     void Start()
     {
-        Debug.Log(heart.position);
         maxHealth = Mathf.RoundToInt(Random.Range(1.0f, 3.0f));
         health = maxHealth;
         lastHealth = maxHealth;
