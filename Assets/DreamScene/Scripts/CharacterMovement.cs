@@ -19,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D characterRb;
     private BoxCollider2D characterBoxCollider;
 
+    private float enemyCollisionCooldown;
     private void Start()
     {
         characterRb = GetComponent<Rigidbody2D>();
@@ -94,7 +95,12 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (enemyCollisionCooldown < Time.fixedTime)
+            return;
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Enemy")
+        {
             CharacterStats.health--;
+            enemyCollisionCooldown = Time.fixedTime + 1f;
+        }  
     }
 }
