@@ -161,7 +161,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.0110576, y: -2.1993103}
+  m_Offset: {x: 1.0906911, y: -2.1993103}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -172,7 +172,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.564759, y: 1.4794703}
+  m_Size: {x: 7.125572, y: 1.4794703}
   m_EdgeRadius: 0
 --- !u!114 &1526770172795209305
 MonoBehaviour:
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a90cc0a0eb33de4a8c47860833f26db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeAttack: {fileID: 0}
+  meleeAttack: {fileID: 1233652800590001499}
 --- !u!114 &2360164687825018409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.4
   damage: 1
-  attackRange: 2
+  attackRange: 3
   maxHealth: 5
   health: 5
   enemyType: boss
