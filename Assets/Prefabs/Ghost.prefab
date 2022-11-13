@@ -144,8 +144,8 @@ MonoBehaviour:
   - {fileID: 2336913969960623838}
   - {fileID: 1495907340424854500}
   m_Bounds:
-    m_Center: {x: 0.0012000203, y: -0.0008600056, z: 0}
-    m_Extent: {x: 0.15879998, y: 0.15905, z: 0}
+    m_Center: {x: 0.0012000054, y: -0.0008600205, z: 0}
+    m_Extent: {x: 0.15879999, y: 0.15904999, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebc54c50907fc04d83df03f836dd47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 0}
+  attack: {fileID: 1405195603251688031}
 --- !u!114 &2721169827731628362
 MonoBehaviour:
   m_ObjectHideFlags: 0

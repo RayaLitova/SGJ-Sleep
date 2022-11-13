@@ -12,17 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ecaa057eb3242459e71545353329db, type: 3}
   m_Name: DayTransitionData
   m_EditorClassIdentifier: 
-  dayNumber: 5
+  dayNumber: 0
   killCount: 0
   successCount: 0
   failureCount: 0
   nextSummaryTexts:
-  - day_end_summary_2
-  - day_end_summary_showHiddenPlatforms
+  - day_start_summary_intro
+  - day_start_summary_tutorial
   nextNewsTitles: []
   nextNewsBodies: []
-  nextLevel: test2
-  nextWeapon: fireball
-  nextBoss: boss3
-  activeModifiers:
-  - showHiddenPlatforms
+  nextLevel: 
+  nextWeapon: 
+  nextBoss: 
+  activeModifiers: []

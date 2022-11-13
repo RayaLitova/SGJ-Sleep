@@ -24,7 +24,7 @@ public class CharacterAttack : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            if (CharacterStats.weaponType == "melee")
+            if (CharacterStats.weaponType == "sword")
             {
                 StartCoroutine("MeleeAttack");
                 attackTimer = Time.fixedTime + attackLength;
@@ -38,7 +38,7 @@ public class CharacterAttack : MonoBehaviour
         }
     }
 
-    private IEnumerator MeleeAttack() 
+    private IEnumerator MeleeAttack()
     {
         attack.gameObject.SetActive(true);
         sword.SetActive(true);

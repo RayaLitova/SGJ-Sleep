@@ -6,7 +6,7 @@ public class CharacterAttackHit : MonoBehaviour
 {
     private void Update()
     {
-        if(CharacterStats.weaponType == "melee")
+        if(CharacterStats.weaponType == "sword")
             transform.position = new Vector3(transform.position.x, transform.parent.position.y, transform.parent.position.z);
     }
     private void OnCollisionEnter2D(Collision2D collision)

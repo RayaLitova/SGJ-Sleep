@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -14,11 +17,19 @@ public class CharacterStats : MonoBehaviour
     public static bool isDoubleJumpEnabled = false;
     public static string weaponType;  //melee / ranged
     public static float bulletSpeed = 7f;
+    [SerializeField] private DayTransitionData dtd;
 
     private Transform heartContainer;
     private void Start()
     {
-        weaponType = Random.Range(0, 2) == 0 ? "melee" : "ranged";
+        weaponType = dtd.nextWeapon ?? "sword";
+        if(Array.IndexOf(dtd.activeModifiers, "playerSpeed") >= 0)
+            runSpeed *= 1.5f;
+        if(Array.IndexOf(dtd.activeModifiers, "playerStrength") >= 0)
+            bulletSpeed *= 1.5f;
+        if(Array.IndexOf(dtd.activeModifiers, "showHiddenPlatforms") >= 0)
+            isDoubleJumpEnabled = true;
+
         heartContainer = transform.Find("HeartContainer");
     }
     private void FixedUpdate()
@@ -31,7 +42,24 @@ public class CharacterStats : MonoBehaviour
         lastHealth = health;
         for (int i = 0; i < maxHealth; i++)
             heartContainer.GetChild(i).gameObject.SetActive((i < health ? true : false));
-        if (health == 0)
-            Destroy(gameObject);
+        if (health <= 0) {
+            dtd.ResetNight();
+            dtd.ResetDay();
+            dtd.nextSummaryTexts = new string[] {
+                Strings.Get("day_start_summary_failed_" + UnityEngine.Random.Range(1, 3))
+            };
+            IEnumerable<int> headlineNumbers = Enumerable.Range(1, 6)
+                .OrderBy(g => UnityEngine.Random.Range(0, 10))
+                .Take(3);
+
+            dtd.nextNewsTitles = headlineNumbers
+                .Select(i => Strings.Get("news_headline_generic_" + i))
+                .ToArray();
+            dtd.nextNewsBodies = headlineNumbers
+                .Select(i => Strings.Get("news_body_generic_" + i))
+                .ToArray();
+
+            SceneManager.LoadScene("Day");
+        }
     }
 }
