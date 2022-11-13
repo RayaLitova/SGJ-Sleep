@@ -23,7 +23,7 @@ public class MainMenuController : MonoBehaviour
             .Select(i => Strings.Get("news_body_generic_" + i))
             .ToArray();
 
-        SceneManager.LoadScene("Day");
+        SceneManager.LoadScene("TutorialS");
     }
 
     public void QuitGame() {
