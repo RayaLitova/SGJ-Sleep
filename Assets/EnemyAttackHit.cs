@@ -11,7 +11,7 @@ public class EnemyAttackHit : MonoBehaviour
 
         if (GetComponent<EnemyStats>() == null)
         {
-            CharacterStats.health -= transform.parent.GetComponent<EnemyStats>().damage;
+            CharacterStats.health -= transform.GetComponentInParent<EnemyStats>().damage;
             gameObject.SetActive(false);
         }
         else
