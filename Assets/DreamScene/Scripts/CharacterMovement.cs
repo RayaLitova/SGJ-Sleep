@@ -95,7 +95,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (enemyCollisionCooldown < Time.fixedTime)
+        if (enemyCollisionCooldown > Time.fixedTime)
             return;
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Enemy")
         {
